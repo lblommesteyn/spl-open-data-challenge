@@ -540,7 +540,7 @@ class EnhancedFreeThrowAnalyzer:
     
     def _generate_visualizations(self, X, y, model_results, output_dir, combo_name):
         """Generate comprehensive visualizations for analysis results"""
-        plt.style.use('seaborn')
+        plt.style.use('default')
         
         # Create feature distributions plot
         self._plot_feature_distributions(X, y, output_dir)
@@ -764,7 +764,7 @@ def main():
         print("\n=== FEATURE IMPORTANCE ===")
         for name, importance in ensemble_results['feature_importance'].items():
             print(f"\n{name.upper()} TOP 5 FEATURES:")
-            print(importance.sort_values(ascending=False).head())
+            print(importance.sort_values(ascending=False))
             
         print("\nAnalysis completed successfully!")
         
